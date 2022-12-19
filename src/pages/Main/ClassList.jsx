@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaHeart } from 'react-icons/fa';
-import { FaRegHeart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import BASE_URL from '../../config';
 import getParametersForUnsplash from './Function/functions';
 
@@ -63,7 +62,12 @@ function ClassList({
           <ClassImg
             src={
               thumbnail_image +
-              getParametersForUnsplash(260, 200, 'auto', 'avif')
+              getParametersForUnsplash({
+                width: 260,
+                height: 200,
+                quality: 'auto',
+                format: 'avif',
+              })
             }
           />
         </ClassImgBox>

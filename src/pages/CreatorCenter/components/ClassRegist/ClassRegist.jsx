@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import ClassBasicInfo from './components/ClassBasicInfo';
 import ClassDetailInfo from './components/ClassDetailInfo';
-import { useNavigate } from 'react-router-dom';
 import BASE_URL from '../../../../config';
 
 function ClassRegist({ currentClass, detailFlag }) {
@@ -76,7 +76,7 @@ function ClassRegist({ currentClass, detailFlag }) {
         currentClass={currentClass}
         detailFlag={detailFlag}
       />
-      <ClassSubmitTimeInput name="createdAt" value={date + ' ' + time} />
+      <ClassSubmitTimeInput name="createdAt" value={`${date} ${time}`} />
     </RegistContainer>
   );
 }

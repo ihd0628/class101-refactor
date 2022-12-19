@@ -8,7 +8,7 @@ import LectureVideo from './pages/LectureVideo/LectureVideo';
 import CreatorCenter from './pages/CreatorCenter/CreatorCenter';
 import YesNav from './YesNav';
 
-const Router = () => {
+function Router() {
   return (
     <BrowserRouter>
       <Routes>
@@ -22,6 +22,6 @@ const Router = () => {
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default Router;

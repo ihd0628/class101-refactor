@@ -14,7 +14,13 @@ function Carousel() {
           <ImageBox key={image.id}>
             <Image
               src={
-                image.url + getParametersForUnsplash(676, 415, 'auto', 'avif')
+                image.url +
+                getParametersForUnsplash({
+                  width: 676,
+                  height: 415,
+                  quality: 'auto',
+                  format: 'avif',
+                })
               }
               alt="이미지 슬라이드"
             />
