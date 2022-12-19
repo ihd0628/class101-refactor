@@ -9,7 +9,7 @@ import {
 import Creator from './Creator';
 import Review from './Review';
 import ReviewModal from './ReviewModal';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
+import BASE_URL from '../../../config';
 
 function DetailIntro({
   image,

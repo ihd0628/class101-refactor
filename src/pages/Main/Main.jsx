@@ -8,7 +8,7 @@ import {
   MAIN_CATEGORY,
   SUB_CATEGORY,
 } from './components/FilterAndSort/CategoryData';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
+import BASE_URL from '../../config';
 
 function Main() {
   const Token = localStorage.getItem('Token');
@@ -21,41 +21,41 @@ function Main() {
   const fetchURL = searchParams.toString();
   const LIMIT = 12;
 
-  useEffect(() => {
-    searchParams.set('limit', LIMIT);
-    searchParams.set('offset', 0);
-    setSearchParams(searchParams);
-
-    if (Token) {
-      fetch(`${BASE_URL}/likes/getList`, {
-        headers: {
-          authorization: Token,
-        },
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log('data.message : ', data.message);
-          setLikedList(data.message);
-        });
-    }
-  }, []);
-
-  useEffect(() => {
-    fetch(`${BASE_URL}/main?${fetchURL}`)
-      .then(res => res.json())
-      .then(data => {
-        setClassList(data.getFilter);
-      });
-  }, [searchParams]);
-
-  // Mock Data
   // useEffect(() => {
-  //   fetch(`data/Main/classListData.json`)
+  //   searchParams.set('limit', LIMIT);
+  //   searchParams.set('offset', 0);
+  //   setSearchParams(searchParams);
+
+  //   if (Token) {
+  //     fetch(`${BASE_URL}/likes/getList`, {
+  //       headers: {
+  //         authorization: Token,
+  //       },
+  //     })
+  //       .then(res => res.json())
+  //       .then(data => {
+  //         console.log('data.message : ', data.message);
+  //         setLikedList(data.message);
+  //       });
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch(`${BASE_URL}/main?${fetchURL}`)
   //     .then(res => res.json())
   //     .then(data => {
-  //       setClassList(data);
+  //       setClassList(data.getFilter);
   //     });
-  // }, []);
+  // }, [searchParams]);
+
+  // Mock Data
+  useEffect(() => {
+    fetch(`data/Main/classListData.json`)
+      .then(res => res.json())
+      .then(data => {
+        setClassList(data);
+      });
+  }, []);
 
   const movePage = pageNumber => {
     searchParams.set('limit', LIMIT);

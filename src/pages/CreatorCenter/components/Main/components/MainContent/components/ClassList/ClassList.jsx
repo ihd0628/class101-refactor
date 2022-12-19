@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ClassListProperty from './components/ClassListProperty';
 import Class from './components/Class';
 import styled from 'styled-components';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
 
 import MOCK from './mockData/classLists';
+import BASE_URL from '../../../../../../../../config';
 
 function ClassList() {
   const [classListArr, setClassListArr] = useState([]);

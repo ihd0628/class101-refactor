@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ClassBasicInfo from './components/ClassBasicInfo';
 import ClassDetailInfo from './components/ClassDetailInfo';
 import { useNavigate } from 'react-router-dom';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
+import BASE_URL from '../../../../config';
 
 function ClassRegist({ currentClass, detailFlag }) {
   const [classInfo, setClassInfo] = useState({

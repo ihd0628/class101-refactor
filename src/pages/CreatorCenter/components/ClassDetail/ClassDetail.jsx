@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import MOCK from '../Main/components/MainContent/components/ClassList/mockData/classLists';
 import ClassRegist from '../ClassRegist/ClassRegist';
 import VideoList from './components/VideoList/VideoList';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
+import BASE_URL from '../../../../config';
 
 function ClassDetail() {
   const [searchParams, setSearchParams] = useSearchParams();

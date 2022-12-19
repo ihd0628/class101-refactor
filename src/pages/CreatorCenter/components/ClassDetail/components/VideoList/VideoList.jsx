@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import VIDEOS from '../../mockData/videoList';
 import { useSearchParams } from 'react-router-dom';
 import Video from './components/Video';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
+import BASE_URL from '../../../../../../config';
 
 function VideoList() {
   const [videos, setVideos] = useState();

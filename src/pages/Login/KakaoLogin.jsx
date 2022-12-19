@@ -2,7 +2,7 @@ import React from 'react';
 import qs from 'qs';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
+import BASE_URL from '../../config';
 
 function KakaoLogin() {
   const navigate = useNavigate();

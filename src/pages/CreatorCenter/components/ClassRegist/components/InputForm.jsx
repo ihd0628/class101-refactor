@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ClassInfo from './ClassBasicInfo';
 import { useSearchParams } from 'react-router-dom';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
+import BASE_URL from '../../../../../config';
 
 function InputForm({
   type,

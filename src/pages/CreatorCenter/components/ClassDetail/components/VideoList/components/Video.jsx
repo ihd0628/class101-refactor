@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
-import BASE_URL from '/Users/galee/Desktop/FinalIOI/37-2nd-IOI-frontend/src/config.js';
+import BASE_URL from '../../../../../../../config';
 
 function Video({ videos, setVideos, video, classId }) {
   const navigate = useNavigate();
