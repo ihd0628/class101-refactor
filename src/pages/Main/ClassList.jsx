@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { FaHeart } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
 import BASE_URL from '../../config';
+import getParametersForUnsplash from './Function/functions';
 
 function ClassList({
   classId,
@@ -26,9 +27,6 @@ function ClassList({
       });
     }
   }, [likedList]);
-
-  console.log('likedList : ', likedList);
-
   const handleLike = () => {
     if (!Token) {
       alert('찜하기를 위해 로그인을 해주세요!');
@@ -62,7 +60,12 @@ function ClassList({
     <ClassBox>
       <StyledLink to={`classes/detail/${classId}`}>
         <ClassImgBox>
-          <ClassImg src={thumbnail_image} />
+          <ClassImg
+            src={
+              thumbnail_image +
+              getParametersForUnsplash(260, 200, 'auto', 'avif')
+            }
+          />
         </ClassImgBox>
         <Creator>{creator}</Creator>
         <ClassTitle>{classTitle}</ClassTitle>

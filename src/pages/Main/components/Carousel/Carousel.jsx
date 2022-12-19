@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { CarouselImgData } from './CarouselImgData';
+import getParametersForUnsplash from '../../Function/functions';
 
 function Carousel() {
   return (
@@ -11,7 +12,12 @@ function Carousel() {
       <StyledSlider {...settings}>
         {CarouselImgData.map(image => (
           <ImageBox key={image.id}>
-            <Image src={image.url} alt="이미지 슬라이드" />
+            <Image
+              src={
+                image.url + getParametersForUnsplash(676, 415, 'auto', 'avif')
+              }
+              alt="이미지 슬라이드"
+            />
           </ImageBox>
         ))}
       </StyledSlider>
