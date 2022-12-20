@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Modal from 'react-modal/lib/components/Modal';
 import { AiOutlineHeart } from '@react-icons/all-files/ai/AiOutlineHeart';
 import { AiFillHeart } from '@react-icons/all-files/ai/AiFillHeart';
-import { BsPlayBtn } from 'react-icons/bs';
+import { AiOutlinePlayCircle } from '@react-icons/all-files/ai/AiOutlinePlayCircle';
 import { BsPerson } from '@react-icons/all-files/bs/BsPerson';
 import { FiShare } from '@react-icons/all-files/fi/FiShare';
 import { FiGift } from '@react-icons/all-files/fi/FiGift';
@@ -102,7 +102,7 @@ function DetailAside({ isLogin, lecture }) {
       <Line>
         <Wrap3>
           <Wrap>
-            <BsPlayBtn size="22" />
+            <AiOutlinePlayCircle size="22" />
             <IconText>콘텐츠 이용권</IconText>
           </Wrap>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlineCreditCard } from '@react-icons/all-files/ai/AiOutlineCreditCard';
-import { BsPiggyBank } from 'react-icons/bs';
+import { FaPiggyBank } from '@react-icons/all-files/fa/FaPiggyBank';
 
 function Payment() {
   const [isChecked, setIsChecked] = useState(false);
@@ -52,7 +52,7 @@ function Payment() {
               카드 결제
             </PayMethod>
             <PayMethod>
-              <BsPiggyBank
+              <FaPiggyBank
                 style={{ position: 'relative', top: '2px', marginRight: '3px' }}
               />
               무통장 입금

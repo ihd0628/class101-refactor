@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaSortDown } from 'react-icons/fa';
+import { BiSortDown } from '@react-icons/all-files/bi/BiSortDown';
 import FilterAndSortModal from './FilterAndSortModal';
 
 function FilterAndSortBox({ title, list, setSelectTitle, selectTitle }) {
@@ -11,7 +11,7 @@ function FilterAndSortBox({ title, list, setSelectTitle, selectTitle }) {
     <>
       <CategoryWrap onClick={() => setIsOpenModal(prev => !prev)}>
         <CategoryName>{boxName}</CategoryName>
-        <FaSortDown />
+        <BiSortDown />
       </CategoryWrap>
       <FilterAndSortModal
         mainModalOpen={isOpenModal}

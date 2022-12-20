@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
 import { AiFillFacebook } from '@react-icons/all-files/ai/AiFillFacebook';
 import { RiKakaoTalkFill } from 'react-icons/ri';
-import { BsTwitter } from 'react-icons/bs';
+import { SiTwitter } from '@react-icons/all-files/si/SiTwitter';
 import { FiLink2 } from '@react-icons/all-files/fi/FiLink2';
 
 function ShareModal({ setIsShareModal }) {
@@ -37,7 +37,7 @@ function ShareModal({ setIsShareModal }) {
           />
         </Icon1>
         <Icon2>
-          <BsTwitter
+          <SiTwitter
             size="28"
             style={{
               position: 'relative',
