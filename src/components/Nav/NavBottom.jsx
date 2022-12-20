@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaCaretDown } from 'react-icons/fa';
+import { FaCaretDown } from '@react-icons/all-files/fa/FaCaretDown';
 
 function NavBottom() {
   return (

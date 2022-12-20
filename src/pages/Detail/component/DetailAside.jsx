@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from 'react-modal/lib/components/Modal';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { BsPlayBtn, BsPerson } from 'react-icons/bs';
-import { FiShare, FiGift } from 'react-icons/fi';
+import { AiOutlineHeart } from '@react-icons/all-files/ai/AiOutlineHeart';
+import { AiFillHeart } from '@react-icons/all-files/ai/AiFillHeart';
+import { BsPlayBtn } from 'react-icons/bs';
+import { BsPerson } from '@react-icons/all-files/bs/BsPerson';
+import { FiShare } from '@react-icons/all-files/fi/FiShare';
+import { FiGift } from '@react-icons/all-files/fi/FiGift';
 import ShareModal from './ShareModal';
 
 function DetailAside({ isLogin, lecture }) {

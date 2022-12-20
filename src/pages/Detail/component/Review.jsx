@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaRegCommentDots } from 'react-icons/fa';
+import { FaRegCommentDots } from '@react-icons/all-files/fa/FaRegCommentDots';
 
 function Review({ reviewId, img, content, deleteBtn, editModalHandler }) {
   return (

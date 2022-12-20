@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { HiOutlinePhotograph } from 'react-icons/hi';
+import { HiOutlinePhotograph } from '@react-icons/all-files/hi/HiOutlinePhotograph';
 import BASE_URL from '../../../config';
 
 function ReviewModal({

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaAddressCard } from 'react-icons/fa';
+import { FaAddressCard } from '@react-icons/all-files/fa/FaAddressCard';
 
 function Subscribe() {
   return (

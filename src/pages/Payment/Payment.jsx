@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { AiOutlineCreditCard } from 'react-icons/ai';
+import { AiOutlineCreditCard } from '@react-icons/all-files/ai/AiOutlineCreditCard';
 import { BsPiggyBank } from 'react-icons/bs';
 
 function Payment() {

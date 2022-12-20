@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import styled from 'styled-components';
-import {
-  FaRegHeart,
-  FaUserCircle,
-  FaChevronDown,
-  FaSearch,
-} from 'react-icons/fa';
+import { FaRegHeart } from '@react-icons/all-files/fa/FaRegHeart';
+import { FaUserCircle } from '@react-icons/all-files/fa/FaUserCircle';
+import { FaChevronDown } from '@react-icons/all-files/fa/FaChevronDown';
+import { FaSearch } from '@react-icons//all-files/fa/FaSearch';
 import Subscribe from '../../pages/Subscribe/Subscribe';
 import ProfileModal from './ProfileModal';
 

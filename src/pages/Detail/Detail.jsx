@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal/lib/components/Modal';
 import { useParams } from 'react-router-dom';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
 import Carousel from './component/Carousel';
 import DetailNav from './component/DetailNav';
 import DetailIntro from './component/DetailIntro';

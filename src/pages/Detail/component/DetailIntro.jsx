@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal/lib/components/Modal';
-import {
-  AiOutlineClose,
-  AiFillCaretLeft,
-  AiFillCaretRight,
-} from 'react-icons/ai';
+import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
+import { AiFillCaretLeft } from '@react-icons/all-files/ai/AiFillCaretLeft';
+import { AiFillCaretRight } from '@react-icons/all-files/ai/AiFillCaretRight';
 import Creator from './Creator';
 import Review from './Review';
 import ReviewModal from './ReviewModal';

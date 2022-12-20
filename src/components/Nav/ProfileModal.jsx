@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaUserCircle, FaChevronRight } from 'react-icons/fa';
+import { FaUserCircle } from '@react-icons/all-files/fa/FaUserCircle';
+import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
 
 function ProfileModal({ setProfileModalOpen }) {
   const logoutYes = () => {
