@@ -13,11 +13,17 @@ function ListItem({ listItem, searchParams, setSearchParams, setVideoId }) {
       <Title>{listItem?.videoTitle}</Title>
       <Description>{listItem?.videoDescription}</Description>
       <Time>
-        <Img src="https://cdn-icons-png.flaticon.com/512/5910/5910421.png" />
+        <Img
+          alt="시간"
+          src="https://cdn-icons-png.flaticon.com/512/5910/5910421.png"
+        />
         <Text>{listItem?.time}</Text>
       </Time>
       <ViewCount>
-        <Img src="https://cdn-icons-png.flaticon.com/512/5618/5618479.png" />
+        <Img
+          alt="조회수"
+          src="https://cdn-icons-png.flaticon.com/512/5618/5618479.png"
+        />
         <Text>{listItem?.viewCount}</Text>
       </ViewCount>
     </ItmeContainer>

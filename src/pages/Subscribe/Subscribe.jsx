@@ -28,7 +28,10 @@ function Subscribe() {
         <Detail>잔여 포인트</Detail>
         <Detail>50,000원</Detail>
       </PointBox>
-      <SubscribeBtn onClick={() => alert('준비 중입니다!')}>
+      <SubscribeBtn
+        aria-label="subscribe"
+        onClick={() => alert('준비 중입니다!')}
+      >
         구독하기
       </SubscribeBtn>
     </SubscribeContainer>

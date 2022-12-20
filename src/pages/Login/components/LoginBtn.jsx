@@ -13,8 +13,10 @@ function LoginBtn() {
       <Info>
         준비물까지 챙겨주는 <br /> 온라인 클래스
       </Info>
-      <Loginbtn onClick={handlelogin}>카카오로 3초 만에 시작하기</Loginbtn>
-      <Otherbtn>다른 방법으로 시작하기</Otherbtn>
+      <Loginbtn aria-label="start login with kakao" onClick={handlelogin}>
+        카카오로 3초 만에 시작하기
+      </Loginbtn>
+      <Otherbtn aria-label="start login">다른 방법으로 시작하기</Otherbtn>
     </Loginbutton>
   );
 }

@@ -18,7 +18,7 @@ function Payment() {
         <OrderInfo>
           <SubTitle>포인트</SubTitle>
           <PointInput placeholder="0원" type="number" />
-          <PayBtn>전액 사용</PayBtn>
+          <PayBtn aria-label="use all money">전액 사용</PayBtn>
           <TextGray>사용 가능한 포인트 50,000원</TextGray>
         </OrderInfo>
 
@@ -45,26 +45,28 @@ function Payment() {
         <OrderInfo>
           <SubTitle>결제 방식</SubTitle>
           <PayWrap>
-            <PayMethod>
+            <PayMethod aria-label="pay using card">
               <AiOutlineCreditCard
                 style={{ position: 'relative', top: '2px', marginRight: '3px' }}
               />
               카드 결제
             </PayMethod>
-            <PayMethod>
+            <PayMethod aria-label="pay send cash">
               <FaPiggyBank
                 style={{ position: 'relative', top: '2px', marginRight: '3px' }}
               />
               무통장 입금
             </PayMethod>
-            <PayMethod>카카오페이</PayMethod>
-            <PayMethod>네이버페이</PayMethod>
+            <PayMethod aria-label="pay using kakaopay">카카오페이</PayMethod>
+            <PayMethod aria-label="pay using naverpay">네이버페이</PayMethod>
           </PayWrap>
           <AgreeLabel onChange={e => setIsChecked(e.target.checked)}>
             <Agree type="checkbox" />
             <Text>(필수) 개인정보 제3자 제공에 동의합니다.</Text>
           </AgreeLabel>
-          <PayBtnLong disabled={isChecked}>결제하기</PayBtnLong>
+          <PayBtnLong aria-label="final pay select button" disabled={isChecked}>
+            결제하기
+          </PayBtnLong>
         </OrderInfo>
       </PaymentWrap>
     </Body>

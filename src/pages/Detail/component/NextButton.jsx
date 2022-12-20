@@ -5,7 +5,7 @@ function NextButton(props) {
   const { className, onClick } = props;
   return (
     <Next className={className} onClick={onClick}>
-      <img src="/images/right-arrow.png" alt="rightArrow" />
+      <img src="/images/right-arrow.png" alt="다음 페이지" />
     </Next>
   );
 }

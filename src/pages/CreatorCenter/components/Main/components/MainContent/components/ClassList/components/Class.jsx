@@ -41,7 +41,9 @@ function Class({
       <Property onClick={goToClassDetail}>{mainCategory}</Property>
       <Property onClick={goToClassDetail}>{subCategory}</Property>
       <Property onClick={goToClassDetail}>{dateForOutput}</Property>
-      <DeleteButton onClick={classDeleter}>삭제</DeleteButton>
+      <DeleteButton aria-label="delete Class" onClick={classDeleter}>
+        삭제
+      </DeleteButton>
     </ClassContainer>
   );
 }

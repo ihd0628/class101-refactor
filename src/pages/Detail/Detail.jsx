@@ -74,8 +74,8 @@ function Detail() {
           <CoverGallery1 src={coverGallery?.[0]} alt="서브이미지" />
 
           <SubSubImgWrap>
-            <CoverGallery2 src={coverGallery?.[1]} />
-            <CoverGallery3 src={coverGallery?.[2]} />
+            <CoverGallery2 src={coverGallery?.[1]} alt="커버이미지 준비 중" />
+            <CoverGallery3 src={coverGallery?.[2]} alt="커버이미지 준비 중" />
             <ShowImg
               onClick={() => {
                 setIsImgModal(prev => !prev);

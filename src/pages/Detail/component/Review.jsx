@@ -8,17 +8,17 @@ function Review({ reviewId, img, content, deleteBtn, editModalHandler }) {
       <Line>
         <Wrap>
           <Div>
-            <UserPic />
+            <UserPic alt="유저 이미지" />
             <UserName>User{reviewId}</UserName>
           </Div>
-          <XBtn id={reviewId} onClick={deleteBtn}>
+          <XBtn aria-label="cancel" id={reviewId} onClick={deleteBtn}>
             x
           </XBtn>
         </Wrap>
 
         <Wrap>
           <ReviewText>{content}</ReviewText>
-          {img && <RiviewImg src={img} img={img} />}
+          {img && <RiviewImg alt="리뷰" src={img} img={img} />}
         </Wrap>
 
         <EditBtn id={reviewId} onClick={editModalHandler}>

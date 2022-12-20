@@ -126,8 +126,10 @@ function ReviewModal({
         <WriteZone>
           {imgSrc && (
             <ImgPreview>
-              <ImgRemoveBtn onClick={removeHandle}>x</ImgRemoveBtn>
-              <img src={imgSrc} alt="preview-img" />
+              <ImgRemoveBtn aria-label="remove Image" onClick={removeHandle}>
+                x
+              </ImgRemoveBtn>
+              <img src={imgSrc} alt="미리보기" />
             </ImgPreview>
           )}
 
@@ -157,9 +159,13 @@ function ReviewModal({
       </CountTxt>
 
       {selectModal ? (
-        <SaveBtn onClick={onSubmit}>저장하기</SaveBtn>
+        <SaveBtn aria-label="save" onClick={onSubmit}>
+          저장하기
+        </SaveBtn>
       ) : (
-        <SaveBtn onClick={onEdit}>수정하기</SaveBtn>
+        <SaveBtn aria-label="save" onClick={onEdit}>
+          수정하기
+        </SaveBtn>
       )}
     </ModalChang>
   );

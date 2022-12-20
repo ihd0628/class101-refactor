@@ -42,8 +42,12 @@ function Video({ videos, setVideos, video, classId }) {
       <Description onClick={goToLectureVideo}>
         강의 설명: {video.videoDescription}
       </Description>
-      <Button onClick={videoDeleter}>delete</Button>
-      <Button onClick={videoEditer}>edit</Button>
+      <Button aria-label="delete Video" onClick={videoDeleter}>
+        delete
+      </Button>
+      <Button aria-label="edit Video" onClick={videoEditer}>
+        edit
+      </Button>
     </VideoContatiner>
   );
 }

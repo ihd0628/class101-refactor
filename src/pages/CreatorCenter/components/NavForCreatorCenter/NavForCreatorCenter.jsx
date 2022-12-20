@@ -8,7 +8,10 @@ function NavForCreatorCenter() {
         <Linc href="/">IOI</Linc>{' '}
         <Linc href="/creatorcenter">Creator Center</Linc>
       </Linc>
-      <Icon src="https://cdn-icons-png.flaticon.com/512/709/709424.png" />
+      <Icon
+        alt="IOI"
+        src="https://cdn-icons-png.flaticon.com/512/709/709424.png"
+      />
     </NavContainor>
   );
 }

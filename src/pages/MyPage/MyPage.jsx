@@ -68,7 +68,9 @@ function MyPage() {
           <Text>친구 초대하고 30,000원 쿠폰 받기</Text>
           <Text>클래스 IOI 앱 설치하기</Text>
           <Text>크리에이터 지원하기</Text>
-          <DeleteBtn onClick={HandleLogout}>로그아웃</DeleteBtn>
+          <DeleteBtn aria-label="logout" onClick={HandleLogout}>
+            로그아웃
+          </DeleteBtn>
         </Myinfo>
         <Product>
           <Likeheader>찜한 상품</Likeheader>

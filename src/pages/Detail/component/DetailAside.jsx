@@ -114,7 +114,7 @@ function DetailAside({ isLogin, lecture }) {
       </Line>
 
       <Wrap2>
-        <GrayBtn onClick={heartAddHandler}>
+        <GrayBtn aria-label="send Like" onClick={heartAddHandler}>
           {isHeartAdd ? (
             <AiFillHeart
               style={{ position: 'relative', top: '2px', color: 'red' }}
@@ -125,7 +125,7 @@ function DetailAside({ isLogin, lecture }) {
           <IconText>{heartCount}</IconText>
         </GrayBtn>
 
-        <GrayBtn onClick={shareHandler}>
+        <GrayBtn aria-label="share this page" onClick={shareHandler}>
           <FiShare style={{ position: 'relative', top: '2px' }} />
           <IconText>공유하기</IconText>
         </GrayBtn>
@@ -138,7 +138,7 @@ function DetailAside({ isLogin, lecture }) {
           <ShareModal setIsShareModal={setIsShareModal} />
         </Modal>
 
-        <GrayBtn>
+        <GrayBtn aria-label="gift">
           <FiGift style={{ position: 'relative', top: '2px' }} />
           <IconText>선물하기</IconText>
         </GrayBtn>
@@ -146,12 +146,16 @@ function DetailAside({ isLogin, lecture }) {
 
       {!isLogin ? (
         <Link to="/payment">
-          <OrangeBtn>클래스 수강하기</OrangeBtn>
+          <OrangeBtn aria-label="start this Class">클래스 수강하기</OrangeBtn>
         </Link>
       ) : (
         <BtnWrap>
-          <OrangeBtn shot>구독하기</OrangeBtn>
-          <OrangeBtn shot>결제하기</OrangeBtn>
+          <OrangeBtn aria-label="subscribe" shot>
+            구독하기
+          </OrangeBtn>
+          <OrangeBtn aria-label="pay" shot>
+            결제하기
+          </OrangeBtn>
         </BtnWrap>
       )}
     </Aside>

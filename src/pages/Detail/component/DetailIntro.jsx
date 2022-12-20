@@ -147,7 +147,9 @@ function DetailIntro({
 
       <ReviewTitle>
         <Title>실제 수강생 후기</Title>
-        <ReviewBtn onClick={modalHandler}>후기 작성하기</ReviewBtn>
+        <ReviewBtn aria-label="make Review" onClick={modalHandler}>
+          후기 작성하기
+        </ReviewBtn>
       </ReviewTitle>
 
       {isModalOpen && (
@@ -156,7 +158,7 @@ function DetailIntro({
           onRequestClose={modalHandler}
           style={modalDisplay}
         >
-          <XBtn onClick={modalHandler}>
+          <XBtn aria-label="cancel" onClick={modalHandler}>
             <AiOutlineClose />
           </XBtn>
           <ReviewModal
@@ -176,7 +178,7 @@ function DetailIntro({
           onRequestClose={editModalHandler}
           style={modalDisplay}
         >
-          <XBtn onClick={editModalHandler}>
+          <XBtn aria-label="cancel" onClick={editModalHandler}>
             <AiOutlineClose />
           </XBtn>
           <ReviewModal
@@ -266,7 +268,9 @@ function DetailIntro({
           환불 정책에 따라 구매일로부터 90일까지 환불 요청이 가능하며, 7일 까지
           전액 환불이 가능합니다.
         </RefundTxt>
-        <SeeMoreBtn>전체 환불 정책 보기</SeeMoreBtn>
+        <SeeMoreBtn aria-label="see payback describe">
+          전체 환불 정책 보기
+        </SeeMoreBtn>
       </RefundBox>
       <Line />
     </>

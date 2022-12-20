@@ -132,10 +132,16 @@ function Main() {
       </ClassContainer>
 
       <BtnContainer>
-        <PageBtn>이전</PageBtn>
-        <PageBtn onClick={() => movePage(1)}>1</PageBtn>
-        <PageBtn onClick={() => movePage(2)}>2</PageBtn>
-        <PageBtn onClick={() => movePage(3)}>3</PageBtn>
+        <PageBtn aria-label="go to previous page">이전</PageBtn>
+        <PageBtn aria-label="go to page 1" onClick={() => movePage(1)}>
+          1
+        </PageBtn>
+        <PageBtn aria-label="go to page 2" onClick={() => movePage(2)}>
+          2
+        </PageBtn>
+        <PageBtn aria-label="go to page 3" onClick={() => movePage(3)}>
+          3
+        </PageBtn>
         <PageBtn>다음</PageBtn>
       </BtnContainer>
     </>

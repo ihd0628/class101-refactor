@@ -70,6 +70,7 @@ function ClassList({
                 format: 'avif',
               })
             }
+            alt={classTitle}
           />
         </ClassImgBox>
         <Creator>{creator}</Creator>
@@ -80,7 +81,7 @@ function ClassList({
         </LikeBox>
         <ClassPrice>{Number(price).toLocaleString()}원</ClassPrice>
       </StyledLink>
-      <LikeButton onClick={handleLike}>
+      <LikeButton aria-label="send like" onClick={handleLike}>
         {isLike ? (
           <FaHeart className="icon-like" size="20" color="#ff5600" />
         ) : (

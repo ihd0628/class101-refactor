@@ -12,7 +12,10 @@ function Nav() {
   return (
     <NavContainer>
       <Title onClick={goToDetail}>CLASS IOI +</Title>
-      <Icon src="https://cdn-icons-png.flaticon.com/512/709/709424.png" />
+      <Icon
+        alt="CLASS IOI"
+        src="https://cdn-icons-png.flaticon.com/512/709/709424.png"
+      />
     </NavContainer>
   );
 }

@@ -13,7 +13,7 @@ function AsideItem({ item: { name, src, flag } }) {
 
   return (
     <ItemContainor onClick={goToFlag}>
-      <Icon src={src} />
+      <Icon alt={name} src={src} />
       <Text>{name}</Text>
     </ItemContainor>
   );

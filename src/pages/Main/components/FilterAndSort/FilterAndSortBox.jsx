@@ -9,7 +9,10 @@ function FilterAndSortBox({ title, list, setSelectTitle, selectTitle }) {
 
   return (
     <>
-      <CategoryWrap onClick={() => setIsOpenModal(prev => !prev)}>
+      <CategoryWrap
+        aria-label="open search box"
+        onClick={() => setIsOpenModal(prev => !prev)}
+      >
         <CategoryName>{boxName}</CategoryName>
         <BiSortDown />
       </CategoryWrap>

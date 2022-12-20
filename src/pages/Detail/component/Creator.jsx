@@ -16,7 +16,7 @@ function Creator({ creatorName, profileImage, aboutCreater }) {
             크리에이터 <br />
             <strong>{creatorName}</strong> 입니다.
           </CreatorH3>
-          <CreatorImg src={profileImage} />
+          <CreatorImg alt="프로필 사진 로딩중" src={profileImage} />
         </FlexWrap>
 
         <BigCreator>
@@ -28,7 +28,11 @@ function Creator({ creatorName, profileImage, aboutCreater }) {
       </CreatorIntro>
       <p>{aboutCreater}</p>
 
-      <MoreBtn onClick={moreOnClick} isOpenContent={isOpenContent}>
+      <MoreBtn
+        aria-label="fold Or Not"
+        onClick={moreOnClick}
+        isOpenContent={isOpenContent}
+      >
         {isOpenContent ? '접기' : '더보기'}
       </MoreBtn>
     </>

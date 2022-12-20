@@ -22,7 +22,7 @@ function ShareModal({ setIsShareModal }) {
     <Container>
       <FlexSpace>
         <Title>공유하기</Title>
-        <ShareXBtn onClick={closeModal}>
+        <ShareXBtn aria-label="share" onClick={closeModal}>
           <AiOutlineClose
             size="20"
             style={{ position: 'relative', top: '-10px' }}

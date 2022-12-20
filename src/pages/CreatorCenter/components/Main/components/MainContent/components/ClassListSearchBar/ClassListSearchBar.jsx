@@ -5,7 +5,10 @@ function ClassListSearchBar() {
   return (
     <SearchBar>
       <SearchInput placeholder="상품명 검색" />
-      <SearchIcon src="https://cdn-icons-png.flaticon.com/512/54/54481.png" />
+      <SearchIcon
+        alt="search product name"
+        src="https://cdn-icons-png.flaticon.com/512/54/54481.png"
+      />
     </SearchBar>
   );
 }

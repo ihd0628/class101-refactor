@@ -13,7 +13,9 @@ function MainHeader() {
   return (
     <HeaderContainer>
       <HeaderTitle>상품</HeaderTitle>
-      <HeaderButton onClick={goToClassRegist}>+ 상품만들기</HeaderButton>
+      <HeaderButton aria-label="make Product" onClick={goToClassRegist}>
+        + 상품만들기
+      </HeaderButton>
     </HeaderContainer>
   );
 }

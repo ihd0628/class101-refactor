@@ -8,11 +8,11 @@ function Login() {
       <Loginwrapper>
         <Companywrapper>
           <Companyname>CLASS IOI</Companyname>
-          <Language> 🇰🇷 한국어 </Language>
+          <Language aria-label="select language"> 🇰🇷 한국어 </Language>
         </Companywrapper>
         <LoginBtn />
       </Loginwrapper>
-      <Loginimage src="./images/Login/Aurora.png" />
+      <Loginimage alt="로그인" src="./images/Login/Aurora.png" />
     </Pagewrapper>
   );
 }

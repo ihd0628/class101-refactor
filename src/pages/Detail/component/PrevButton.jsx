@@ -5,7 +5,7 @@ function PrevButton(props) {
   const { className, onClick } = props;
   return (
     <Prev className={className} onClick={onClick}>
-      <img src="/images/left-arrow.png" alt="rightArrow" />
+      <img src="/images/left-arrow.png" alt="이전 페이지" />
     </Prev>
   );
 }

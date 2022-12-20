@@ -62,7 +62,7 @@ function ClassRegist({ currentClass, detailFlag }) {
     >
       <RegistHeader>
         <div>정규 클래스</div>
-        <Button>Submit</Button>
+        <Button aria-label="submit Class">Submit</Button>
       </RegistHeader>
       <ClassBasicInfo
         formName="클래스 기본 정보"

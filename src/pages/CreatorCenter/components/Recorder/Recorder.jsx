@@ -89,18 +89,31 @@ function Recorder({ searchParams }) {
     <RecorderContainer>
       <Video ref={preview} />
       <ButtonContainer>
-        <button type="button" onClick={recordStarter}>
+        <button
+          aria-label="start Recording"
+          type="button"
+          onClick={recordStarter}
+        >
           Start Recording
         </button>
-        <button type="button" onClick={recordStopoer}>
+        <button
+          aria-label="stop Recording"
+          type="button"
+          onClick={recordStopoer}
+        >
           Stop Recording
         </button>
-        <button type="button" onClick={recordDownloader} ref={downloader}>
+        <button
+          aria-label="recording Video Download"
+          type="button"
+          onClick={recordDownloader}
+          ref={downloader}
+        >
           Download Video
         </button>
       </ButtonContainer>
       <Form ref={videoRegistForm}>
-        <Button onClick={lectureSubmit}>
+        <Button aria-label="submit Lecture" onClick={lectureSubmit}>
           {currentVideoId ? 'Edit' : 'Submit'}
           <br /> Lecture
         </Button>

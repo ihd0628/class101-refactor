@@ -31,7 +31,9 @@ function VideoList() {
 
   return (
     <VideoListContainer>
-      <Button onClick={goToRecorder}>강의 제작</Button>
+      <Button aria-label="make Class" onClick={goToRecorder}>
+        강의 제작
+      </Button>
       {videos?.map(video => {
         return (
           <Video
