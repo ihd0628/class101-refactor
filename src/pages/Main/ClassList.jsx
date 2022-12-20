@@ -7,10 +7,10 @@ import getParametersForUnsplash from './Function/functions';
 
 function ClassList({
   classId,
-  thumbnail_image,
+  thumbnailImage,
   creator,
   classTitle,
-  like_count,
+  likeCount,
   price,
   likedList,
 }) {
@@ -30,28 +30,28 @@ function ClassList({
     if (!Token) {
       alert('찜하기를 위해 로그인을 해주세요!');
       navigate('/login');
+    } else if (!isLike) {
+      fetch(`${BASE_URL}/likes/${classId}`, {
+        method: 'POST',
+        headers: {
+          authorization: Token,
+        },
+      }).then(response => {
+        if (response.statusText === 'Created') {
+          window.location.reload();
+        }
+      });
     } else {
-      !isLike
-        ? fetch(`${BASE_URL}/likes/${classId}`, {
-            method: 'POST',
-            headers: {
-              authorization: Token,
-            },
-          }).then(response => {
-            if (response.statusText === 'Created') {
-              window.location.reload();
-            }
-          })
-        : fetch(`${BASE_URL}/likes/${classId}`, {
-            method: 'DELETE',
-            headers: {
-              authorization: Token,
-            },
-          }).then(response => {
-            if (response.statusText === 'OK') {
-              window.location.reload();
-            }
-          });
+      fetch(`${BASE_URL}/likes/${classId}`, {
+        method: 'DELETE',
+        headers: {
+          authorization: Token,
+        },
+      }).then(response => {
+        if (response.statusText === 'OK') {
+          window.location.reload();
+        }
+      });
     }
   };
 
@@ -61,7 +61,7 @@ function ClassList({
         <ClassImgBox>
           <ClassImg
             src={
-              thumbnail_image +
+              thumbnailImage +
               getParametersForUnsplash({
                 width: 260,
                 height: 200,
@@ -75,7 +75,7 @@ function ClassList({
         <ClassTitle>{classTitle}</ClassTitle>
         <LikeBox>
           <FaHeart size="12" color="#a2a2a2" />
-          <CountLike>{like_count}</CountLike>
+          <CountLike>{likeCount}</CountLike>
         </LikeBox>
         <ClassPrice>{Number(price).toLocaleString()}원</ClassPrice>
       </StyledLink>

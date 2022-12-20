@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
+import Modal from 'react-modal';
 import Router from './Router';
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
 import variables from './styles/variables';
-import Modal from 'react-modal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

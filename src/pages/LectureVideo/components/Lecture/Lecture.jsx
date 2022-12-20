@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
-import Video from './components/Video';
 import styled from 'styled-components';
 
+import Video from './components/Video';
+
 function Lecture({ selectedLecture }) {
-  const [videoSrc, setVideoSrc] = useState();
+  const [, setVideoSrc] = useState();
   useEffect(() => {
     setVideoSrc(selectedLecture?.video_url);
   }, []);

@@ -14,12 +14,12 @@ function VideoInfo({
     <InfoContainer>
       <InfoTitle>{title}</InfoTitle>
       {VIDEO_INFO_LIST.map(
-        ({ type, title, isMultiple, subject, description }) => {
+        ({ type, videoTitle, isMultiple, subject, description }) => {
           return (
             <InputForm
               key={subject}
               type={type}
-              title={title}
+              title={videoTitle}
               isMultiple={isMultiple}
               subject={subject}
               description={description}

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import InputForm from './InputForm';
 
 function ClassDetailInfo({
-  title,
+  formName,
   classInfo,
   setClassInfo,
   currentClass,
@@ -11,13 +11,13 @@ function ClassDetailInfo({
 }) {
   return (
     <InfoContainer>
-      <InfoTitle>{title}</InfoTitle>
+      <InfoTitle>{formName}</InfoTitle>
 
       <InputForm
         type="textarea"
         subject="클래스 소개"
         description="클래스에 대한 소개를 작성해주세요."
-        borderUnUse={true}
+        borderUnUse
         classInfo={classInfo}
         setClassInfo={setClassInfo}
         title="classIntroduce"

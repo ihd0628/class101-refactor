@@ -19,8 +19,8 @@ function ClassDetail() {
       .then(response => {
         return response.json();
       })
-      .then(result => {
-        setCurrnetClass(result.classes);
+      .then((/* result */) => {
+        setCurrnetClass(MOCK);
       });
   }, []);
 

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import styled from 'styled-components';
-import { FaRegHeart } from 'react-icons/fa';
-import { FaUserCircle } from 'react-icons/fa';
-import { FaChevronDown } from 'react-icons/fa';
-import { FaSearch } from 'react-icons/fa';
+import {
+  FaRegHeart,
+  FaUserCircle,
+  FaChevronDown,
+  FaSearch,
+} from 'react-icons/fa';
 import Subscribe from '../../pages/Subscribe/Subscribe';
 import ProfileModal from './ProfileModal';
 
@@ -18,6 +20,41 @@ function NavTop() {
 
   const goToHome = () => {
     navigate('/?limit=4&offset=0');
+  };
+
+  const subscribeModal = {
+    overlay: {
+      position: 'fixed',
+      backgroundColor: 'rgb(0, 0, 0, 0.5)',
+      zIndex: 100,
+    },
+    content: {
+      padding: 0,
+      border: 'none',
+      borderRadius: '50px',
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  const profileModal = {
+    overlay: {
+      position: 'fixed',
+      backgroundColor: 'rgb(0, 0, 0, 0.5)',
+      zIndex: 100,
+    },
+    content: {
+      position: 'absolute',
+      padding: 0,
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      transform: 'translate(-50%, -50%)',
+    },
   };
 
   return (
@@ -33,7 +70,7 @@ function NavTop() {
             ariaHideApp={false}
             onRequestClose={() => setSubscribeModalOpen(prev => !prev)}
             style={subscribeModal}
-            preventScroll={true}
+            preventScroll
             onAfterOpen={() => {
               document.body.style.overflow = 'hidden';
             }}
@@ -83,41 +120,6 @@ function NavTop() {
     </Header>
   );
 }
-
-const subscribeModal = {
-  overlay: {
-    position: 'fixed',
-    backgroundColor: 'rgb(0, 0, 0, 0.5)',
-    zIndex: 100,
-  },
-  content: {
-    padding: 0,
-    border: 'none',
-    borderRadius: '50px',
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-
-const profileModal = {
-  overlay: {
-    position: 'fixed',
-    backgroundColor: 'rgb(0, 0, 0, 0.5)',
-    zIndex: 100,
-  },
-  content: {
-    position: 'absolute',
-    padding: 0,
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-  },
-};
 
 const CloseBtn = styled.button`
   position: absolute;

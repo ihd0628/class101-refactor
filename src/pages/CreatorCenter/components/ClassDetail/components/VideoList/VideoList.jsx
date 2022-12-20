@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
+import Video from './components/Video';
 
 import VIDEOS from '../../mockData/videoList';
-import { useSearchParams } from 'react-router-dom';
-import Video from './components/Video';
 import BASE_URL from '../../../../../../config';
 
 function VideoList() {
@@ -21,8 +21,8 @@ function VideoList() {
       },
     })
       .then(response => response.json())
-      .then(result => {
-        setVideos(result.video);
+      .then(() => {
+        setVideos(VIDEOS);
       });
   }, []);
   const goToRecorder = () => {

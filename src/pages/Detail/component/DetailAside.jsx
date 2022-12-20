@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Modal from 'react-modal/lib/components/Modal';
-import ShareModal from './ShareModal';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { BsPlayBtn, BsPerson } from 'react-icons/bs';
 import { FiShare, FiGift } from 'react-icons/fi';
+import ShareModal from './ShareModal';
 
 function DetailAside({ isLogin, lecture }) {
   const {
@@ -14,18 +14,37 @@ function DetailAside({ isLogin, lecture }) {
     creatorName,
     classTitle,
     price,
-    like_count,
+    likeCount,
     // classId,
   } = lecture;
 
   const [isHeartAdd, setIsHeartAdd] = useState(false);
-  const [heartCount, setHeartCount] = useState(like_count);
+  const [heartCount, setHeartCount] = useState(likeCount);
   const [isShareModal, setIsShareModal] = useState(false);
   const PRICE = Number(price).toLocaleString();
 
+  const modalDisplay = {
+    overlay: {
+      position: 'fixed',
+      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+      zIndex: 100,
+    },
+    content: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      bottom: 'auto',
+      right: 'auto',
+      transform: 'translate(-50%, -50%)',
+      padding: '0',
+      background: 'none',
+      border: 'none',
+    },
+  };
+
   useEffect(() => {
-    setHeartCount(like_count);
-  }, [like_count]);
+    setHeartCount(likeCount);
+  }, [likeCount]);
 
   const shareHandler = () => {
     setIsShareModal(prev => !prev);
@@ -44,7 +63,7 @@ function DetailAside({ isLogin, lecture }) {
       //   method: 'POST',
       //   body: JSON.stringify({
       //     classId: classId,
-      //     like_count: heartCount,
+      //     likeCount: heartCount,
       //   }),
       // });
     } else if (isHeartAdd) {
@@ -53,7 +72,7 @@ function DetailAside({ isLogin, lecture }) {
       //   method: 'DELETE',
       //   body: JSON.stringify({
       //     classId: classId,
-      //     like_count: heartCount,
+      //     likeCount: heartCount,
       //   }),
       // });
     }
@@ -135,25 +154,6 @@ function DetailAside({ isLogin, lecture }) {
     </Aside>
   );
 }
-
-const modalDisplay = {
-  overlay: {
-    position: 'fixed',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    zIndex: 100,
-  },
-  content: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    bottom: 'auto',
-    right: 'auto',
-    transform: 'translate(-50%, -50%)',
-    padding: '0',
-    background: 'none',
-    border: 'none',
-  },
-};
 
 const Aside = styled.div`
   position: sticky;

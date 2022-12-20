@@ -14,12 +14,12 @@ function Likeproducts({ likeList }) {
   return (
     <Products onClick={goToDetail}>
       <ThumbBox>
-        <Thumb src={likeList?.thumbnail_image} alt="썸네일" />
+        <Thumb src={likeList?.thumbnailImage} alt="썸네일" />
       </ThumbBox>
       <Creatorname>{likeList?.creator}</Creatorname>
       <Description>{likeList?.className}</Description>
       <div>
-        <heart>❤️{likeList?.like_count}</heart>
+        <heart>❤️{likeList?.likeCount}</heart>
       </div>
       <Price>{Number(likeList?.price).toLocaleString()}원</Price>
     </Products>

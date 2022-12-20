@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 function DetailNav() {
+  const SUB_TITLE = [
+    { id: 1, name: '후기', href: '#reviewConer' },
+    { id: 2, name: '클래스 소개', href: '#classIntroduce' },
+    { id: 3, name: '크리에이터', href: '#creator' },
+    { id: 4, name: '환불 정책', href: '#refund' },
+  ];
+
   return (
     <Nav>
       {SUB_TITLE.map(title => {
@@ -17,13 +24,6 @@ function DetailNav() {
 }
 
 export default DetailNav;
-
-const SUB_TITLE = [
-  { id: 1, name: '후기', href: '#reviewConer' },
-  { id: 2, name: '클래스 소개', href: '#classIntroduce' },
-  { id: 3, name: '크리에이터', href: '#creator' },
-  { id: 4, name: '환불 정책', href: '#refund' },
-];
 
 const Nav = styled.ul`
   ${props => props.theme.variables.flex('', '', 'center')}

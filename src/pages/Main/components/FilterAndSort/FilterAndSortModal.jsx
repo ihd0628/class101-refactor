@@ -58,7 +58,7 @@ function FilterAndSortModal({
       ariaHideApp={false}
       onRequestClose={() => setMainModalOpen(prev => !prev)}
       style={style.mainModal}
-      preventScroll={true}
+      preventScroll
       onAfterOpen={() => {
         document.body.style.overflow = 'hidden';
         document.body.style.paddingRight = '17px';

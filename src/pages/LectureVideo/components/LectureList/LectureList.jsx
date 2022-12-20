@@ -1,6 +1,6 @@
 import React from 'react';
-import ListItem from './components/ListItem';
 import styled from 'styled-components';
+import ListItem from './components/ListItem';
 
 function LectureList({
   lectureList,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import ClassListProperty from './components/ClassListProperty';
 import Class from './components/Class';
-import styled from 'styled-components';
 
 import MOCK from './mockData/classLists';
 import BASE_URL from '../../../../../../../../config';
@@ -19,9 +19,9 @@ function ClassList() {
       },
     })
       .then(response => response.json())
-      .then(result => {
+      .then(() => {
         const acc = [];
-        result.classes.map(item => {
+        MOCK.forEach(item => {
           if (acc.length !== 0) {
             acc.every((accs, index) => {
               if (item.classId < accs.classId) {

@@ -7,6 +7,16 @@ import PrevButton from './PrevButton';
 import NextButton from './NextButton';
 
 function Carousel({ coverGallery }) {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: <PrevButton />,
+    nextArrow: <NextButton />,
+  };
+
   return (
     <Wrap>
       <StyledSlider {...settings}>
@@ -23,16 +33,6 @@ function Carousel({ coverGallery }) {
     </Wrap>
   );
 }
-
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  prevArrow: <PrevButton />,
-  nextArrow: <NextButton />,
-};
 
 const Wrap = styled.div`
   position: relative;

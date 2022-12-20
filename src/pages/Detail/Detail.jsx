@@ -10,26 +10,23 @@ import DetailAside from './component/DetailAside';
 import BASE_URL from '../../config';
 
 function Detail() {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin] = useState(false);
   const [isImgModal, setIsImgModal] = useState(false);
   const [lecture, setLecture] = useState({});
   const {
     classTitle,
     coverImage,
     coverGallery,
-    review_images,
+    reviewImages,
     classIntroduce,
     creatorName,
-    profile_image,
-    about_creater,
+    profileImage,
+    aboutCreater,
     content,
   } = lecture;
 
-  const token = localStorage.getItem('Token');
   const params = useParams();
   const classId = params.id;
-
-  //172.20.10.7:3000/classes/detail/${classId}
 
   useEffect(() => {
     fetch(`${BASE_URL}/classes/detail/${classId}`, {
@@ -46,6 +43,25 @@ function Detail() {
         setLecture(result.classes);
       });
   }, []);
+
+  const modalDisplay = {
+    overlay: {
+      position: 'fixed',
+      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+      zIndex: 100,
+    },
+    content: {
+      position: 'absolute',
+      top: '60%',
+      left: '50%',
+      bottom: 'auto',
+      right: 'auto',
+      transform: 'translate(-50%, -50%)',
+      padding: '0',
+      background: 'none',
+      border: 'none',
+    },
+  };
 
   if (!lecture) return <>loading...</>;
 
@@ -100,12 +116,12 @@ function Detail() {
           <DetailIntro
             classId={classId}
             classTitle={classTitle}
-            review_images={review_images}
+            reviewImages={reviewImages}
             image={coverGallery}
             classIntroduce={classIntroduce}
             creatorName={creatorName}
-            profile_image={profile_image}
-            about_creater={about_creater}
+            profileImage={profileImage}
+            aboutCreater={aboutCreater}
             content={content}
           />
         </DetailLeft>
@@ -115,25 +131,6 @@ function Detail() {
     </DtatilPage>
   );
 }
-
-const modalDisplay = {
-  overlay: {
-    position: 'fixed',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    zIndex: 100,
-  },
-  content: {
-    position: 'absolute',
-    top: '60%',
-    left: '50%',
-    bottom: 'auto',
-    right: 'auto',
-    transform: 'translate(-50%, -50%)',
-    padding: '0',
-    background: 'none',
-    border: 'none',
-  },
-};
 
 const DtatilPage = styled.div`
   padding-top: 120px;

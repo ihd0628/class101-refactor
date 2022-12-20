@@ -1,15 +1,11 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaUserCircle } from 'react-icons/fa';
-import { FaChevronRight } from 'react-icons/fa';
+import { FaUserCircle, FaChevronRight } from 'react-icons/fa';
 
 function ProfileModal({ setProfileModalOpen }) {
-  const navigate = useNavigate();
-
   const logoutYes = () => {
     localStorage.clear();
-    // navigate('/?limit=4&offset=0');
     setProfileModalOpen(prev => !prev);
   };
 

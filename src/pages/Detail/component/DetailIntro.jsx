@@ -16,8 +16,8 @@ function DetailIntro({
   classTitle,
   classIntroduce,
   creatorName,
-  profile_image,
-  about_creater,
+  profileImage,
+  aboutCreater,
   content,
   classId,
 }) {
@@ -33,6 +33,22 @@ function DetailIntro({
 
   console.log(classId);
 
+  const modalDisplay = {
+    overlay: {
+      position: 'fixed',
+      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+      zIndex: 100,
+    },
+    content: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
   const modalHandler = () => {
     setIsModalOpen(prev => !prev);
   };
@@ -43,7 +59,7 @@ function DetailIntro({
     const target = Number(e.currentTarget.id);
     setEditReviewId(target);
 
-    reviews.map(review => {
+    reviews.forEach(review => {
       if (review.reviewId === target) {
         setEditUserId(review.userId);
       }
@@ -69,16 +85,16 @@ function DetailIntro({
       });
   }, [offset, totalReview]);
 
-  const maxPageNum = Math.ceil(totalReview?.length / 4);
+  const maxPageNum = Math.ceil(totalReview?.length || 1 / 4);
   const currentPage = offset / 4 + 1;
 
-  const pageArr = (totalReview => {
-    let result = [];
-    for (let i = 1; i <= maxPageNum; i++) {
+  const pageArr = (() => {
+    const result = [];
+    for (let i = 1; i <= maxPageNum; i += 1) {
       result.push(i);
     }
     return result;
-  })(totalReview);
+  })();
 
   const movePage = pageNum => {
     setOffset((pageNum - 1) * 4);
@@ -108,8 +124,8 @@ function DetailIntro({
       .then(response => response.json())
       .then(result => {
         // console.log(result);
-        let reviewsForCopy = [];
-        for (let i = 0; i < 4; i++) {
+        const reviewsForCopy = [];
+        for (let i = 0; i < 4; i += 1) {
           reviewsForCopy.push(result.review[i]);
         }
         setTotalReview(result.review);
@@ -182,9 +198,9 @@ function DetailIntro({
       <ImageWrap>
         {reviews?.map(item => {
           return (
-            item?.image_url && (
+            item?.imageUrl && (
               <ImageContainer key={item?.id}>
-                <ReviewImg src={item?.image_url} alt="후기 이미지" />
+                <ReviewImg src={item?.imageUrl} alt="후기 이미지" />
               </ImageContainer>
             )
           );
@@ -193,14 +209,14 @@ function DetailIntro({
       <div>
         {reviews === undefined
           ? null
-          : reviews?.map(({ userId, reviewId, image_url, content }) => {
+          : reviews?.map(({ userId, reviewId, imageUrl, reviewContent }) => {
               return (
                 <div key={reviewId}>
                   <Review
                     userId={userId}
                     reviewId={reviewId}
-                    img={image_url}
-                    content={content}
+                    img={imageUrl}
+                    content={reviewContent}
                     deleteBtn={deleteBtn}
                     editModalHandler={editModalHandler}
                     reviews={reviews}
@@ -242,8 +258,8 @@ function DetailIntro({
       <Line id="creator" />
       <Creator
         creatorName={creatorName}
-        profile_image={profile_image}
-        about_creater={about_creater}
+        profileImage={profileImage}
+        aboutCreater={aboutCreater}
       />
       <Line id="refund" />
       <Title>환불 정책</Title>
@@ -258,22 +274,6 @@ function DetailIntro({
     </>
   );
 }
-
-const modalDisplay = {
-  overlay: {
-    position: 'fixed',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    zIndex: 100,
-  },
-  content: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-  },
-};
 
 const XBtn = styled.div`
   display: flex;

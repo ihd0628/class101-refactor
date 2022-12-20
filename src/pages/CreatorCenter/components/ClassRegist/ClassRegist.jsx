@@ -31,12 +31,14 @@ function ClassRegist({ currentClass, detailFlag }) {
 
   const classSubmit = event => {
     event.preventDefault();
-    for (const key in classInfo) {
-      if (classInfo[key] === '' || classInfo[key] === []) {
+    const classInfoNames = classInfo.keys();
+    classInfoNames.forEach(name => {
+      if (classInfo[name] === '' || classInfo[name] === []) {
         alert('입력란을 모두 입력하세요.');
-        return null;
+        return false;
       }
-    }
+      return true;
+    });
 
     const classForm = new FormData(classRegistForm.current);
     fetch(`${BASE_URL}/classes/class`, {
@@ -63,14 +65,14 @@ function ClassRegist({ currentClass, detailFlag }) {
         <Button>Submit</Button>
       </RegistHeader>
       <ClassBasicInfo
-        title="클래스 기본 정보"
+        formName="클래스 기본 정보"
         classInfo={classInfo}
         setClassInfo={setClassInfo}
         currentClass={currentClass}
         detailFlag={detailFlag}
       />
       <ClassDetailInfo
-        title="클래스 상세 정보"
+        formName="클래스 상세 정보"
         classInfo={classInfo}
         setClassInfo={setClassInfo}
         currentClass={currentClass}

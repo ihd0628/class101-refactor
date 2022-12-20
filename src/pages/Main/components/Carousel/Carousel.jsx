@@ -3,10 +3,20 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { CarouselImgData } from './CarouselImgData';
+import CarouselImgData from './CarouselImgData';
 import getParametersForUnsplash from '../../Function/functions';
 
 function Carousel() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <CarouselContainer>
       <StyledSlider {...settings}>
@@ -37,16 +47,6 @@ function Carousel() {
 const CarouselContainer = styled.div`
   position: relative;
 `;
-
-const settings = {
-  dots: true,
-  infinite: true,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
 
 const StyledSlider = styled(Slider)`
   display: inline-block;
@@ -94,14 +94,6 @@ const SlideControlBox = styled.div`
     margin-right: 25px;
   }
 `;
-
-const SlideIndex = styled.span`
-  padding: 5px;
-  font-size: 12px;
-  color: white;
-`;
-
-const SeparateIndex = styled(SlideIndex)``;
 
 const StyleLine = styled.div`
   margin: 0 80px 0 15px;

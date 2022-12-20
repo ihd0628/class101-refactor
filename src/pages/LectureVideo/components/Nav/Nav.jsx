@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import variables from '../../../../styles/variables';
 
 function Nav() {
   const navigate = useNavigate();

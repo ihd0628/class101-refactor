@@ -6,7 +6,7 @@ import Detail from './pages/Detail/Detail';
 import MyPage from './pages/MyPage/MyPage';
 import Main from './pages/Main/Main';
 
-const YesNav = () => {
+function YesNav() {
   return (
     <>
       <Nav />
@@ -18,6 +18,6 @@ const YesNav = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default YesNav;

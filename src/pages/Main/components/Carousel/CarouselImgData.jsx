@@ -1,4 +1,4 @@
-export const CarouselImgData = [
+const CarouselImgData = [
   {
     id: 0,
     url: 'https://images.unsplash.com/photo-1637858868799-7f26a0640eb6',
@@ -16,3 +16,5 @@ export const CarouselImgData = [
     url: 'https://images.unsplash.com/uploads/1413349410189e2a95d2e/39982a21',
   },
 ];
+
+export default CarouselImgData;

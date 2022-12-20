@@ -8,17 +8,17 @@ import {
   MAIN_CATEGORY,
   SUB_CATEGORY,
 } from './components/FilterAndSort/CategoryData';
-import BASE_URL from '../../config';
+// import BASE_URL from '../../config';
 
 function Main() {
-  const Token = localStorage.getItem('Token');
+  // const Token = localStorage.getItem('Token');
   const [classList, setClassList] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [mainModalOpen, setMainModalOpen] = useState(false);
+  // const [mainModalOpen, setMainModalOpen] = useState(false);
   const [selectTitle, setSelectTitle] = useState('');
-  const [likedList, setLikedList] = useState([]);
+  const [likedList] = useState([]);
 
-  const fetchURL = searchParams.toString();
+  // const fetchURL = searchParams.toString();
   const LIMIT = 12;
 
   // useEffect(() => {
@@ -109,20 +109,20 @@ function Main() {
           classList.map(
             ({
               classId,
-              thumbnail_image,
+              thumbnailImage,
               creatorName,
               classTitle,
-              like_count,
+              likeCount,
               price,
             }) => {
               return (
                 <ClassList
                   key={classId}
                   classId={classId}
-                  thumbnail_image={thumbnail_image}
+                  thumbnailImage={thumbnailImage}
                   creator={creatorName}
                   classTitle={classTitle}
-                  like_count={like_count}
+                  likeCount={likeCount}
                   price={price}
                   likedList={likedList}
                 />

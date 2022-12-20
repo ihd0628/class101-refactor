@@ -1,8 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import MainContent from './components/MainContent/MainContent';
 import MainFooter from './components/MainFooter/MainFooter';
-
-import styled from 'styled-components';
 
 function Main() {
   return (

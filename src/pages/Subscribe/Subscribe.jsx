@@ -55,17 +55,6 @@ const Title = styled.p`
   color: white;
 `;
 
-const CancelBtn = styled.button`
-  position: absolute;
-  top: 40px;
-  right: 45px;
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-`;
-
 const SubscribeBox = styled.div`
   margin-bottom: 20px;
   padding: 20px;

@@ -30,13 +30,15 @@ function KakaoLogin() {
           data: {
             Token: result.data.access_token,
           },
-        }).then(result => {
-          localStorage.setItem('Token', result.data.accessToken);
+        }).then(response => {
+          localStorage.setItem('Token', response.data.accessToken);
           navigate('/?limit=4&offset=0');
         });
       }
     })
-    .catch(err => {});
+    .catch(err => {
+      console.log(err);
+    });
 
   return <div>kakao login</div>;
 }

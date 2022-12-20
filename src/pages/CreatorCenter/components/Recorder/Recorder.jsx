@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import VideoInfo from './components/VideoInfo';
-import { useNavigate } from 'react-router-dom';
 import BASE_URL from '../../../../config';
 
-function Recorder({ searchParams, setSearchParams }) {
+function Recorder({ searchParams }) {
   const preview = useRef();
   const downloader = useRef();
   const videoRegistForm = useRef();
@@ -23,13 +23,13 @@ function Recorder({ searchParams, setSearchParams }) {
     })
     .then(stream => {
       streamForRecord = stream;
-      let video = preview.current;
+      const video = preview.current;
       video.srcObject = stream;
       video.play();
     });
   const recordStarter = () => {
     console.log('녹화시작');
-    let video = preview.current;
+    const video = preview.current;
     recorder = new MediaRecorder(streamForRecord);
     recorder.ondataavailable = event => {
       videoFile = URL.createObjectURL(event.data);
@@ -89,9 +89,13 @@ function Recorder({ searchParams, setSearchParams }) {
     <RecorderContainer>
       <Video ref={preview} />
       <ButtonContainer>
-        <button onClick={recordStarter}>Start Recording</button>
-        <button onClick={recordStopoer}>Stop Recording</button>
-        <button onClick={recordDownloader} ref={downloader}>
+        <button type="button" onClick={recordStarter}>
+          Start Recording
+        </button>
+        <button type="button" onClick={recordStopoer}>
+          Stop Recording
+        </button>
+        <button type="button" onClick={recordDownloader} ref={downloader}>
           Download Video
         </button>
       </ButtonContainer>
@@ -139,15 +143,6 @@ const ButtonContainer = styled.div`
 `;
 const Form = styled.form`
   ${props => props.theme.variables.flex('column', 'center', 'center')}
-`;
-const InputContainer = styled.div`
-  ${props => props.theme.variables.flex('column', 'center', 'center')}
-  margin-top: 20px;
-  min-width: 440px;
-  width: 33%;
-  max-width: 800px;
-  /* border: 1px solid #E5E5E5;
-  border-radius: 7px; */
 `;
 const Button = styled.button`
   border: none;

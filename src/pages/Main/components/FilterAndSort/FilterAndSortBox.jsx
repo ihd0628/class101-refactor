@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import FilterAndSortModal from './FilterAndSortModal';
 import { FaSortDown } from 'react-icons/fa';
+import FilterAndSortModal from './FilterAndSortModal';
 
 function FilterAndSortBox({ title, list, setSelectTitle, selectTitle }) {
   const [isOpenModal, setIsOpenModal] = useState(false);

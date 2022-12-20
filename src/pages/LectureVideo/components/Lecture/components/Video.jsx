@@ -1,10 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 function Video({ videoSrc }) {
-  const videoSrcTest = '/data/LectureVideo/ddabong1.webm';
-
-  return <VideoContainer controls={true} src={videoSrc} />;
+  return <VideoContainer controls src={videoSrc} />;
 }
 
 const VideoContainer = styled.video`

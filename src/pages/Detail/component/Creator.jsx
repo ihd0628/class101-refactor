@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-function Creator({ creatorName, profile_image, about_creater }) {
+function Creator({ creatorName, profileImage, aboutCreater }) {
   const [isOpenContent, setIsOpenContent] = useState(false);
 
   const moreOnClick = () => {
@@ -16,7 +16,7 @@ function Creator({ creatorName, profile_image, about_creater }) {
             크리에이터 <br />
             <strong>{creatorName}</strong> 입니다.
           </CreatorH3>
-          <CreatorImg src={profile_image} />
+          <CreatorImg src={profileImage} />
         </FlexWrap>
 
         <BigCreator>
@@ -26,7 +26,7 @@ function Creator({ creatorName, profile_image, about_creater }) {
           />
         </BigCreator>
       </CreatorIntro>
-      <p>{about_creater}</p>
+      <p>{aboutCreater}</p>
 
       <MoreBtn onClick={moreOnClick} isOpenContent={isOpenContent}>
         {isOpenContent ? '접기' : '더보기'}

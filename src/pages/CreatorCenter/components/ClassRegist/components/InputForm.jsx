@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import ClassInfo from './ClassBasicInfo';
 import { useSearchParams } from 'react-router-dom';
 import BASE_URL from '../../../../../config';
 
@@ -19,11 +18,106 @@ function InputForm({
   currentVideoId,
 }) {
   const [currentVideo, setCurrentVideo] = useState();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const classId = searchParams.get('classId');
 
   const token = localStorage.getItem('Token');
+
+  const inputDefaultValueWhenVideoExist = currentVideoId
+    ? currentVideo?.[title]
+    : classInfo[title];
+
+  const mainCategory =
+    classInfo?.mainCategory === '1' ? (
+      <>
+        <option value="">선택안함</option>
+        <option
+          value={1}
+          selected={
+            detailFlag && currentClass
+              ? currentClass?.subCategory === '스포츠'
+              : null
+          }
+        >
+          스포츠
+        </option>
+        <option
+          value={2}
+          selected={
+            detailFlag && currentClass
+              ? currentClass?.subCategory === '예절'
+              : null
+          }
+        >
+          예절
+        </option>
+        <option
+          value={3}
+          selected={
+            detailFlag && currentClass
+              ? currentClass?.subCategory === '예술'
+              : null
+          }
+        >
+          예술
+        </option>
+        <option
+          value={4}
+          selected={
+            detailFlag && currentClass
+              ? currentClass?.subCategory === '패션'
+              : null
+          }
+        >
+          패션
+        </option>
+      </>
+    ) : (
+      <>
+        <option value="">선택안함</option>
+        <option
+          value={5}
+          selected={
+            detailFlag && currentClass
+              ? currentClass?.subCategory === '영어'
+              : null
+          }
+        >
+          영어
+        </option>
+        <option
+          value={6}
+          selected={
+            detailFlag && currentClass
+              ? currentClass?.subCategory === '중국어'
+              : null
+          }
+        >
+          중국어
+        </option>
+        <option
+          value={7}
+          selected={
+            detailFlag && currentClass
+              ? currentClass?.subCategory === '일본어'
+              : null
+          }
+        >
+          일본어
+        </option>
+        <option
+          value={8}
+          selected={
+            detailFlag && currentClass
+              ? currentClass?.subCategory === '아랍어'
+              : null
+          }
+        >
+          아랍어
+        </option>
+      </>
+    );
 
   useEffect(() => {
     if (detailFlag) {
@@ -40,7 +134,7 @@ function InputForm({
           console.log('resultVideo : ', result.video);
           const videos = result.video;
 
-          let currentvideo = videos.filter(
+          const currentvideo = videos.filter(
             video => video.id === Number(currentVideoId)
           );
           setCurrentVideo(currentvideo[0]);
@@ -48,8 +142,9 @@ function InputForm({
     }
   }, []);
   const classInfoSetter = event => {
-    classInfo[title] = event.target.value;
-    setClassInfo({ ...classInfo });
+    const classInfoCopy = { ...classInfo };
+    classInfoCopy[title] = event.target.value;
+    setClassInfo(classInfoCopy);
   };
 
   const INPUTS = {
@@ -58,7 +153,7 @@ function InputForm({
         onChange={classInfoSetter}
         name="mainCategory"
         defaultValue={
-          detailFlag && currentClass ? currentClass[title] : ClassInfo[title]
+          detailFlag && currentClass ? currentClass[title] : classInfo[title]
         }
       >
         <option value="">선택안함</option>
@@ -89,99 +184,10 @@ function InputForm({
         onChange={classInfoSetter}
         name="subCategory"
         defaultValue={
-          detailFlag && currentClass ? currentClass[title] : ClassInfo[title]
+          detailFlag && currentClass ? currentClass[title] : classInfo[title]
         }
       >
-        {classInfo?.mainCategory === '' ? null : classInfo?.mainCategory ===
-          '1' ? (
-          <>
-            <option value="">선택안함</option>
-            <option
-              value={1}
-              selected={
-                detailFlag && currentClass
-                  ? currentClass?.subCategory === '스포츠'
-                  : null
-              }
-            >
-              스포츠
-            </option>
-            <option
-              value={2}
-              selected={
-                detailFlag && currentClass
-                  ? currentClass?.subCategory === '예절'
-                  : null
-              }
-            >
-              예절
-            </option>
-            <option
-              value={3}
-              selected={
-                detailFlag && currentClass
-                  ? currentClass?.subCategory === '예술'
-                  : null
-              }
-            >
-              예술
-            </option>
-            <option
-              value={4}
-              selected={
-                detailFlag && currentClass
-                  ? currentClass?.subCategory === '패션'
-                  : null
-              }
-            >
-              패션
-            </option>
-          </>
-        ) : (
-          <>
-            <option value="">선택안함</option>
-            <option
-              value={5}
-              selected={
-                detailFlag && currentClass
-                  ? currentClass?.subCategory === '영어'
-                  : null
-              }
-            >
-              영어
-            </option>
-            <option
-              value={6}
-              selected={
-                detailFlag && currentClass
-                  ? currentClass?.subCategory === '중국어'
-                  : null
-              }
-            >
-              중국어
-            </option>
-            <option
-              value={7}
-              selected={
-                detailFlag && currentClass
-                  ? currentClass?.subCategory === '일본어'
-                  : null
-              }
-            >
-              일본어
-            </option>
-            <option
-              value={8}
-              selected={
-                detailFlag && currentClass
-                  ? currentClass?.subCategory === '아랍어'
-                  : null
-              }
-            >
-              아랍어
-            </option>
-          </>
-        )}
+        {classInfo?.mainCategory === '' ? null : mainCategory}
       </Select>
     ),
 
@@ -190,7 +196,7 @@ function InputForm({
         onChange={classInfoSetter}
         name="classLevel"
         defaultValue={
-          detailFlag && currentClass ? currentClass[title] : ClassInfo[title]
+          detailFlag && currentClass ? currentClass[title] : classInfo[title]
         }
       >
         <option value="">선택안함</option>
@@ -251,7 +257,7 @@ function InputForm({
         name={title}
         onChange={classInfoSetter}
         defaultValue={
-          detailFlag && currentClass ? currentClass[title] : ClassInfo[title]
+          detailFlag && currentClass ? currentClass[title] : classInfo[title]
         }
       />
     ),
@@ -267,9 +273,7 @@ function InputForm({
           defaultValue={
             detailFlag && currentClass
               ? currentClass[title]
-              : currentVideoId
-              ? currentVideo?.[title]
-              : ClassInfo[title]
+              : inputDefaultValueWhenVideoExist
           }
           multiple={isMultiple}
           type={type}

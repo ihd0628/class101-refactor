@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import InputForm from './InputForm';
 import FORM_TEXT_LIST from '../constData/FORM_TEXT_LIST';
 
 function ClassBasicInfo({
-  title,
+  formName,
   classInfo,
   setClassInfo,
   currentClass,
@@ -12,7 +12,7 @@ function ClassBasicInfo({
 }) {
   return (
     <InfoContainer>
-      <InfoTitle>{title}</InfoTitle>
+      <InfoTitle>{formName}</InfoTitle>
       {FORM_TEXT_LIST.map(
         ({ type, title, isMultiple, subject, description }) => {
           return (

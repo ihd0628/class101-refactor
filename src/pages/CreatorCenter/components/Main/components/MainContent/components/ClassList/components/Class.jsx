@@ -2,25 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 
-const mainCategoryTable = {
-  1: '취미, 특기',
-  2: '외국어',
-};
-
-const subCategoryTable = {
-  1: '스포츠',
-  2: '예절',
-  3: '예술',
-  4: '패션',
-  5: '영어',
-  6: '중국어',
-  7: '일본어',
-  8: '아랍어',
-};
-
 function Class({
   index,
-  classItem,
   classItem: {
     classId,
     coverImage,
@@ -34,7 +17,7 @@ function Class({
 }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const classDeleter = event => {
+  const classDeleter = () => {
     classListArr.splice(index, 1);
     setClassListArr([...classListArr]);
   };
@@ -48,7 +31,7 @@ function Class({
   const date = createdAt.split('T');
   const date1 = date[0];
   const date2 = date[1].split('.')[0];
-  const dateForOutput = date1 + ' ' + date2;
+  const dateForOutput = `${date1} ${date2}`;
 
   return (
     <ClassContainer>

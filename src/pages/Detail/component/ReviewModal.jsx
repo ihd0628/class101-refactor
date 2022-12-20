@@ -8,7 +8,6 @@ function ReviewModal({
   classTitle,
   closeModal,
   selectModal,
-  setReviews,
   registTxt,
   setTotalReview,
   editReviewId,
@@ -21,28 +20,28 @@ function ReviewModal({
 
   const token = localStorage.getItem('Token');
 
-  const previewHandle = e => {
-    e.preventDefault();
-    if (e.target.files.length) {
-      const imgTarget = e.target.files[0];
+  const previewHandle = event => {
+    event.preventDefault();
+    if (event.target.files.length) {
+      const imgTarget = event.target.files[0];
       const fileReader = new FileReader();
       fileReader.readAsDataURL(imgTarget);
-      fileReader.onload = e => {
-        setImgSrc(e.target.result);
+      fileReader.onload = eventOnLoad => {
+        setImgSrc(eventOnLoad.target.result);
       };
-      setimgFile(e.target.files[0]);
+      setimgFile(event.target.files[0]);
     } else {
       setImgSrc('');
     }
   };
 
-  const removeHandle = e => {
-    e.preventDefault();
+  const removeHandle = event => {
+    event.preventDefault();
     setImgSrc('');
   };
 
-  const onSubmit = e => {
-    e.preventDefault();
+  const onSubmit = event => {
+    event.preventDefault();
 
     console.log('룰루');
 
@@ -72,8 +71,8 @@ function ReviewModal({
       });
   };
 
-  const onEdit = e => {
-    e.preventDefault();
+  const onEdit = event => {
+    event.preventDefault();
 
     console.log('editReviewId : ', editReviewId);
 
@@ -139,7 +138,7 @@ function ReviewModal({
               maxLength={201}
               placeholder="무단 홍보, 비방 글은 삭제 될 수 있습니다."
               value={reviewTxt}
-              onChange={e => setReviewTxt(e.target.value)}
+              onChange={event => setReviewTxt(event.target.value)}
             />
           ) : (
             <Textarea
@@ -147,7 +146,7 @@ function ReviewModal({
               name="editText"
               maxLength={201}
               value={editTxt}
-              onChange={e => setEditTxt(e.target.value)}
+              onChange={event => setEditTxt(event.target.value)}
             />
           )}
         </WriteZone>

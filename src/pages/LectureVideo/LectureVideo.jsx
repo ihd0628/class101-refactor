@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Lecture from './components/Lecture/Lecture';
-import LectureList from './components/LectureList/LectureList';
 import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
+import Lecture from './components/Lecture/Lecture';
+import LectureList from './components/LectureList/LectureList';
 import VIDEOS from './mockData/video';
 import Nav from './components/Nav/Nav';
 import BASE_URL from '../../config';
@@ -12,7 +12,7 @@ function LectureVideo() {
   const [selectedLecture, setSelectedLecture] = useState();
   const [lectureList, setLectureList] = useState();
   const [videoId, setVideoId] = useState(searchParams.get('videoId'));
-  const [classId, setClassId] = useState(searchParams.get('classId'));
+  const [classId] = useState(searchParams.get('classId'));
 
   console.log('classId : ', classId);
   console.log('videoId : ', videoId);
@@ -34,10 +34,11 @@ function LectureVideo() {
         console.log('result : ', result);
         setLectureList(result.video);
       });
+    setLectureList(VIDEOS);
   }, []);
 
   useEffect(() => {
-    lectureList?.map(video => {
+    lectureList?.forEach(video => {
       if (Number(videoId) === Number(video.id)) {
         setSelectedLecture(video);
       }
