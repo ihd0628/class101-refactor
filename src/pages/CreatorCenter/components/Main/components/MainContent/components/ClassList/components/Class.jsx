@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
+import getCreateTimeForOutput from './Function/functions';
 
 function Class({
   index,
@@ -16,6 +17,7 @@ function Class({
   setClassList,
 }) {
   const [searchParams, setSearchParams] = useSearchParams();
+  const createTimeForOutput = getCreateTimeForOutput(createdAt);
 
   const classDeleter = () => {
     classList.splice(index, 1);
@@ -28,11 +30,6 @@ function Class({
     setSearchParams(searchParams);
   };
 
-  const date = createdAt.split('T');
-  const date1 = date[0];
-  const date2 = date[1]?.split('.')[0];
-  const dateForOutput = `${date1} ${date2}`;
-
   return (
     <ClassContainer>
       <input type="checkbox" />
@@ -40,7 +37,7 @@ function Class({
       <Property onClick={goToClassDetail}>{classTitle}</Property>
       <Property onClick={goToClassDetail}>{mainCategory}</Property>
       <Property onClick={goToClassDetail}>{subCategory}</Property>
-      <Property onClick={goToClassDetail}>{dateForOutput}</Property>
+      <Property onClick={goToClassDetail}>{createTimeForOutput}</Property>
       <DeleteButton aria-label="delete Class" onClick={classDeleter}>
         삭제
       </DeleteButton>

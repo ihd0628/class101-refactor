@@ -11,7 +11,7 @@ const MOCK = [
     classLevel: '4',
 
     classIntroduce: '월킹월킹 트월킹',
-    createdAt: '2022-10-05 오후 3:17',
+    createdAt: '2022-10-05T13:17',
   },
   {
     classId: 2,
@@ -29,7 +29,7 @@ const MOCK = [
     classLevel: '3',
 
     classIntroduce: '따봉따봉 따따봉',
-    createdAt: '2022-10-05 오후 3:17',
+    createdAt: '2022-10-05T14:17',
   },
 
   {
@@ -44,7 +44,7 @@ const MOCK = [
     classLevel: '4',
 
     classIntroduce: '월킹월킹 트월킹',
-    createdAt: '2022-10-05 오후 3:17',
+    createdAt: '2022-10-05T15:17',
   },
   {
     classId: 4,
@@ -58,7 +58,7 @@ const MOCK = [
     classLevel: '4',
 
     classIntroduce: '월킹월킹 트월킹',
-    createdAt: '2022-10-05 오후 3:17',
+    createdAt: '2022-10-05T16:17',
   },
 ];
 
