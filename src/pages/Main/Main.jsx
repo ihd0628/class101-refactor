@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
-import ClassList from './ClassList';
+import ClassList from './components/ClassList/ClassList';
 import FilterAndSortBox from './components/FilterAndSort/FilterAndSortBox';
 import Carousel from './components/Carousel/Carousel';
 import {

@@ -3,8 +3,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaHeart } from '@react-icons/all-files/fa/FaHeart';
 import { FaRegHeart } from '@react-icons/all-files/fa/FaRegHeart';
-import BASE_URL from '../../config';
-import getParametersForUnsplash from './Function/functions';
+import BASE_URL from '../../../../config';
+import getParametersForUnsplash from '../../Function/functions';
 
 function ClassList({
   classId,
