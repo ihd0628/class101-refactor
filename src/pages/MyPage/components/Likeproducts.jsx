@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Likeproducts({ likeList }) {
-  console.log('e : ', likeList);
-
   const navigate = useNavigate();
 
   const goToDetail = () => {

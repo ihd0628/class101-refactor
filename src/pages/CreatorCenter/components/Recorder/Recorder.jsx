@@ -28,7 +28,6 @@ function Recorder({ searchParams }) {
       video.play();
     });
   const recordStarter = () => {
-    console.log('녹화시작');
     const video = preview.current;
     recorder = new MediaRecorder(streamForRecord);
     recorder.ondataavailable = event => {
@@ -41,7 +40,6 @@ function Recorder({ searchParams }) {
     recorder.start();
   };
   const recordStopoer = () => {
-    console.log('녹화종료');
     recorder.stop();
   };
   const recordDownloader = async () => {
@@ -55,7 +53,6 @@ function Recorder({ searchParams }) {
     event.preventDefault();
     const videoForm = new FormData(videoRegistForm.current);
     if (currentVideoId) {
-      console.log('edit');
       fetch(`${BASE_URL}/video?videoId=${currentVideoId}`, {
         method: 'PATCH',
         headers: {
@@ -64,13 +61,11 @@ function Recorder({ searchParams }) {
         },
         body: videoForm,
       }).then(response => {
-        console.log(response);
         if (response.ok) {
           navigate(`?page=classDetail&classId=${currentClassId}`);
         }
       });
     } else {
-      console.log('submit');
       fetch(`${BASE_URL}/video/`, {
         method: 'POST',
         headers: {

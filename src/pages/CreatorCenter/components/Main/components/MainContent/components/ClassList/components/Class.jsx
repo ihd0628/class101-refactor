@@ -12,14 +12,14 @@ function Class({
     subCategory,
     createdAt,
   },
-  classListArr,
-  setClassListArr,
+  classList,
+  setClassList,
 }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const classDeleter = () => {
-    classListArr.splice(index, 1);
-    setClassListArr([...classListArr]);
+    classList.splice(index, 1);
+    setClassList([...classList]);
   };
 
   const goToClassDetail = () => {

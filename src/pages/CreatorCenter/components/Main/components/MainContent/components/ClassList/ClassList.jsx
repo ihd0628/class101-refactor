@@ -7,7 +7,7 @@ import MOCK from './mockData/classLists';
 // import BASE_URL from '../../../../../../../../config';
 
 function ClassList() {
-  const [classListArr, setClassListArr] = useState([]);
+  const [classList, setClassList] = useState([]);
 
   // const token = localStorage.getItem('Token');
 
@@ -36,25 +36,23 @@ function ClassList() {
     //         acc.push(item);
     //       }
     //     });
-    //     setClassListArr(acc);
+    //     setClassList(acc);
     //   });
-    setClassListArr(MOCK);
+    setClassList(MOCK);
   }, []);
-
-  console.log('classListArr : ', classListArr);
 
   return (
     <ClassListContainer>
       <ClassListProperty />
-      {classListArr?.map((classItem, index) => {
+      {classList?.map((classItem, index) => {
         return (
           <Class
             key={classItem.classId}
             index={index}
             id={classItem.id}
             classItem={classItem}
-            classListArr={classListArr}
-            setClassListArr={setClassListArr}
+            classList={classList}
+            setClassList={setClassList}
           />
         );
       })}

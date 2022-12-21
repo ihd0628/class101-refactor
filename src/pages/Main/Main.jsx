@@ -34,7 +34,6 @@ function Main() {
   //     })
   //       .then(res => res.json())
   //       .then(data => {
-  //         console.log('data.message : ', data.message);
   //         setLikedList(data.message);
   //       });
   //   }

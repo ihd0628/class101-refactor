@@ -29,8 +29,6 @@ function DetailIntro({
   const [editReviewId, setEditReviewId] = useState();
   const [editUserId, setEditUserId] = useState();
 
-  console.log(classId);
-
   const modalDisplay = {
     overlay: {
       position: 'fixed',
@@ -78,7 +76,6 @@ function DetailIntro({
     fetch(`${BASE_URL}/review/${classId}?offset=${offset}&limit=4`)
       .then(response => response.json())
       .then(result => {
-        console.log(result.review);
         setReviews(result.review);
       });
   }, [offset, totalReview]);
@@ -121,7 +118,6 @@ function DetailIntro({
     })
       .then(response => response.json())
       .then(result => {
-        // console.log(result);
         const reviewsForCopy = [];
         for (let i = 0; i < 4; i += 1) {
           reviewsForCopy.push(result.review[i]);

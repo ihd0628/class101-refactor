@@ -35,11 +35,9 @@ function Detail() {
       },
     })
       .then(response => {
-        console.log('response : ', response);
         return response.json();
       })
       .then(result => {
-        console.log('result : ', result);
         setLecture(result.classes);
       });
   }, []);

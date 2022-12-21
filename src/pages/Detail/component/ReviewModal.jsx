@@ -43,8 +43,6 @@ function ReviewModal({
   const onSubmit = event => {
     event.preventDefault();
 
-    console.log('룰루');
-
     const formData = new FormData();
 
     formData.append('classId', classId);
@@ -65,7 +63,6 @@ function ReviewModal({
           closeModal();
           setTotalReview(result.review);
         } else {
-          console.log(result);
           alert('리뷰 등록에 실패했습니다');
         }
       });
@@ -73,8 +70,6 @@ function ReviewModal({
 
   const onEdit = event => {
     event.preventDefault();
-
-    console.log('editReviewId : ', editReviewId);
 
     const formData = new FormData();
     formData.append('reviewId', editReviewId);
@@ -92,7 +87,7 @@ function ReviewModal({
       body: formData,
     })
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result => alert(result));
   };
 
   return (

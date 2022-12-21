@@ -131,7 +131,6 @@ function InputForm({
           return response.json();
         })
         .then(result => {
-          console.log('resultVideo : ', result.video);
           const videos = result.video;
 
           const currentvideo = videos.filter(
