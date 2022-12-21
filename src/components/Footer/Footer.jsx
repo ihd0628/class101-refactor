@@ -63,7 +63,9 @@ function Footer() {
 }
 
 const FooterContainer = styled.footer`
+  background-color: black;
   width: 100%;
+  height: 500px;
   border-top: 1px solid #e8e8e8;
 `;
 

@@ -64,7 +64,7 @@ function Main() {
   };
 
   return (
-    <>
+    <MainContainer>
       <SlideContainer>
         <SlideBox>
           <Carousel />
@@ -84,9 +84,7 @@ function Main() {
           </ContentBox>
         </SlideBox>
       </SlideContainer>
-
       <CategoryBoxTitle>전체 클래스</CategoryBoxTitle>
-
       <CategoryContainer>
         <FilterAndSortBox
           title="메인 카테고리"
@@ -103,7 +101,6 @@ function Main() {
         />
         <FilterAndSortBox title="정렬" />
       </CategoryContainer>
-
       <ClassContainer>
         {classList.length > 0 &&
           classList.map(
@@ -130,7 +127,6 @@ function Main() {
             }
           )}
       </ClassContainer>
-
       <BtnContainer>
         <PageBtn aria-label="go to previous page">이전</PageBtn>
         <PageBtn aria-label="go to page 1" onClick={() => movePage(1)}>
@@ -144,9 +140,13 @@ function Main() {
         </PageBtn>
         <PageBtn>다음</PageBtn>
       </BtnContainer>
-    </>
+    </MainContainer>
   );
 }
+
+const MainContainer = styled.section`
+  height: 2528.33px;
+`;
 
 const SlideContainer = styled.div`
   margin: 122px 0 100px 0;
