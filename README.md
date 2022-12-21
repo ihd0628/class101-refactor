@@ -54,6 +54,13 @@
 
 `React`, `React Router`, `SCSS`
 
+## 주요 기능 소개
+
+💡 **주요 기능**
+
+- 랩탑 카메라를 이용한 강의 녹화 기능
+- 녹화한 강의 다운로드 및 업로드
+
 ## 관련 포스팅
 
 <a href='https://velog.io/@hoon0123/%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%85%B8%EB%A0%A5%EB%93%A4-2'>✅성능 최적화 기록</a>
