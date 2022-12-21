@@ -30,7 +30,7 @@ function Class({
 
   const date = createdAt.split('T');
   const date1 = date[0];
-  const date2 = date[1].split('.')[0];
+  const date2 = date[1]?.split('.')[0];
   const dateForOutput = `${date1} ${date2}`;
 
   return (

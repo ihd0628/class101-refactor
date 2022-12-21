@@ -4,38 +4,41 @@ import ClassListProperty from './components/ClassListProperty';
 import Class from './components/Class';
 
 import MOCK from './mockData/classLists';
-import BASE_URL from '../../../../../../../../config';
+// import BASE_URL from '../../../../../../../../config';
 
 function ClassList() {
   const [classListArr, setClassListArr] = useState([]);
 
-  const token = localStorage.getItem('Token');
+  // const token = localStorage.getItem('Token');
 
   useEffect(() => {
-    fetch(`${BASE_URL}/classes/`, {
-      method: 'GET',
-      headers: {
-        authorization: token,
-      },
-    })
-      .then(response => response.json())
-      .then(() => {
-        const acc = [];
-        MOCK.forEach(item => {
-          if (acc.length !== 0) {
-            acc.every((accs, index) => {
-              if (item.classId < accs.classId) {
-                acc.splice(index, 0, item);
-                return false;
-              }
-              return true;
-            });
-          } else if (acc.length === 0) {
-            acc.push(item);
-          }
-        });
-        setClassListArr(acc);
-      });
+    // HTTP 통신용
+
+    // fetch(`${BASE_URL}/classes/`, {
+    //   method: 'GET',
+    //   headers: {
+    //     authorization: token,
+    //   },
+    // })
+    //   .then(response => response.json())
+    //   .then(() => {
+    //     const acc = [];
+    //     MOCK.forEach(item => {
+    //       if (acc.length !== 0) {
+    //         acc.every((accs, index) => {
+    //           if (item.classId < accs.classId) {
+    //             acc.splice(index, 0, item);
+    //             return false;
+    //           }
+    //           return true;
+    //         });
+    //       } else if (acc.length === 0) {
+    //         acc.push(item);
+    //       }
+    //     });
+    //     setClassListArr(acc);
+    //   });
+    setClassListArr(MOCK);
   }, []);
 
   console.log('classListArr : ', classListArr);
