@@ -40,6 +40,9 @@ function LectureVideo() {
     });
   }, [videoId, lectureList]);
 
+  console.log('lectureList : ', lectureList);
+  console.log('selectedLecture : ', selectedLecture);
+
   return (
     <>
       <Nav />

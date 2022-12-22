@@ -26,7 +26,7 @@ function InputForm({
 
   const inputDefaultValueWhenVideoExist = currentVideoId
     ? currentVideo?.[title]
-    : classInfo[title];
+    : classInfo?.[title];
 
   const mainCategory =
     classInfo?.mainCategory === '1' ? (
@@ -152,7 +152,9 @@ function InputForm({
         onChange={classInfoSetter}
         name="mainCategory"
         defaultValue={
-          detailFlag && currentClass ? currentClass[title] : classInfo[title]
+          detailFlag && currentClass
+            ? currentClass?.[title]
+            : classInfo?.[title]
         }
       >
         <option value="">선택안함</option>
@@ -183,7 +185,9 @@ function InputForm({
         onChange={classInfoSetter}
         name="subCategory"
         defaultValue={
-          detailFlag && currentClass ? currentClass[title] : classInfo[title]
+          detailFlag && currentClass
+            ? currentClass?.[title]
+            : classInfo?.[title]
         }
       >
         {classInfo?.mainCategory === '' ? null : mainCategory}
@@ -195,7 +199,9 @@ function InputForm({
         onChange={classInfoSetter}
         name="classLevel"
         defaultValue={
-          detailFlag && currentClass ? currentClass[title] : classInfo[title]
+          detailFlag && currentClass
+            ? currentClass?.[title]
+            : classInfo?.[title]
         }
       >
         <option value="">선택안함</option>
@@ -256,7 +262,9 @@ function InputForm({
         name={title}
         onChange={classInfoSetter}
         defaultValue={
-          detailFlag && currentClass ? currentClass[title] : classInfo[title]
+          detailFlag && currentClass
+            ? currentClass?.[title]
+            : classInfo?.[title]
         }
       />
     ),
