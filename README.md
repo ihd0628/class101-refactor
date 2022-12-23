@@ -31,9 +31,10 @@
 
 ### 주요 내용
 
-1. 이미지 최적화
-2. 코드 스플리팅
-3. 레이아웃 변경 최소화
+1. 이미지 CDN 사용하여 이미지 최적화
+2. @react-icons/all-files라이브러리를 사용하여 react-icons 번들 사이즈 최적화
+3. React.lazy를 사용한 코드 스플리팅
+4. heigth 미리 설정 통한 렌더링 시 레이아웃 변경 최소화
 
 ## commit convention
 
