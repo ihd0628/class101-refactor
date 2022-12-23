@@ -62,3 +62,21 @@ convention 명 : 커밋 내역
 | chore    | 패키지 매니저 설정                                    |
 | rename   | 파일 혹은 폴더명 수정하거나 옮기는 작업               |
 | remove   | 파일을 삭제하는 작업만 하는 경우                      |
+
+## 팀원
+
+<table>
+    <tr>
+        <td align="center"><img src="https://user-images.githubusercontent.com/93499154/208896498-126d95de-db48-4a7d-a7bf-27151ec93b5c.png" width="100">
+        </td>
+        <td align="center"><img src="https://user-images.githubusercontent.com/93499154/208896343-59b34c50-f89a-4ceb-8e7d-1a6bdd0a0a18.png" width="100"></td>
+        <td align="center"><img src="https://user-images.githubusercontent.com/93499154/208896583-f3d63adf-b5be-4a72-82ee-edfb45d61393.png" width="100"></td>
+        <td align="center"><img src="https://user-images.githubusercontent.com/93499154/208896708-00f9be1f-6f6f-4e1d-9294-33e2ecf0bde7.png" width="100"></td>
+    </tr>
+    <tr>
+        <td align="center"><a href="https://github.com/ihd0628">이승훈</a></td>
+        <td align="center"><a href="https://github.com/HyeRrin">주혜린</a></td>
+        <td align="center"><a href="https://github.com/galee1025">이가을</a></td>
+        <td align="center"><a href="https://github.com/Kang-Jinsoo">강진수</a></td>
+    </tr>
+</table>
