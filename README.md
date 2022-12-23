@@ -4,16 +4,18 @@
 
 ![react](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
 
-- 선택 이유
-  - 대규모 커뮤니티를 통한 정보 습득에 유리
-  - JSX 문법을 사용함에 따라, JavaScript에 대한 지식을 바탕으로 접근성이 용이하다 판단
-    </br>
+선택 이유
+
+- 대규모 커뮤니티를 통한 정보 습득에 유리
+- JSX 문법을 사용함에 따라, JavaScript에 대한 지식을 바탕으로 접근성이 용이하다 판단
+  </br>
 
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=flat-square&logo=styled-components&logoColor=white)
 
-- 선택 이유
-  - Javascript를 이용한 동적 스타일링이 가능
-  - CSS-in-JS 방식을 통해 CSS, SCSS파일을 생성하지 않고도 스타일을 컴포넌트 단위로 관리 가능
+선택 이유
+
+- Javascript를 이용한 동적 스타일링이 가능
+- CSS-in-JS 방식을 통해 CSS, SCSS파일을 생성하지 않고도 스타일을 컴포넌트 단위로 관리 가능
 
 ## 기능
 
